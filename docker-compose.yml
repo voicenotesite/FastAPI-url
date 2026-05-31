@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    container_name: urlshortener
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./urlshortener.db
+      - SECRET_KEY=change-me
+    volumes:
+      - ./data:/app/data
